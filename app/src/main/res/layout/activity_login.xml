@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="56dp"
-        android:text="SISNETRAN RD"
+        android:text="SISRETRANT RD"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
