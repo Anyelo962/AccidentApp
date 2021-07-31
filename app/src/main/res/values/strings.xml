@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">accident_app</string>
+    <string name="email_user">Correo electronico</string>
+    <string name="firstName">Nombre de usuario</string>
+    <string name="lastName">Apellido</string>
+    <string name="addBirthDate">Agregdar fecha de nacimiento</string>
+    <string name="number_id">Ingrese su numero de cedula</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

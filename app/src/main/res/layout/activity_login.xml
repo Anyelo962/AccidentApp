@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.LoginActivity"
     >
-
-
     <View
         android:id="@+id/topView"
         android:layout_width="match_parent"
@@ -180,5 +178,4 @@
             android:layout_weight="1"
             app:srcCompat="@drawable/twitter_logo" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout
-   >
+</androidx.constraintlayout.widget.ConstraintLayout>

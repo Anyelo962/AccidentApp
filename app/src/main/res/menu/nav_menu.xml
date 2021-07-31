@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ic_home"
+        android:enabled="true"
+        android:title="Noticias"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/ic_favorite"
+        android:enabled="true"
+        android:title="Reportes"
+        android:icon="@drawable/ic_baseline_favorite"
+        />
+    <item
+        android:id="@+id/id_notification"
+        android:enabled="true"
+        android:title="Notificaciones"
+        android:icon="@drawable/ic_baseline_notifications"/>
+
+
+
+
+</menu>
