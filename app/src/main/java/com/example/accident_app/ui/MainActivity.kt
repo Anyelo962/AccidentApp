@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity(), IComunicationFragment, IEmergency {
 
     override fun numberEmergency(fragment: Fragment) {
             supportFragmentManager.beginTransaction().apply {
+                //Toast.makeText(baseContext, "Llego aqui", Toast.LENGTH_LONG).show();
                 replace(R.id.id_fl_wrapper, EmergenciesFragment()).commit();
                 addToBackStack("MainActivity");
             }
