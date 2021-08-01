@@ -1,4 +1,4 @@
-package com.example.accident_app.models
+package com.example.accident_app.Models
 
 import com.google.gson.annotations.SerializedName
 import java.util.*

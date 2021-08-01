@@ -1,6 +1,6 @@
 package com.example.accident_app.interfaces
 
-import com.example.accident_app.models.RegisterUsers
+import com.example.accident_app.Models.RegisterUsers
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET

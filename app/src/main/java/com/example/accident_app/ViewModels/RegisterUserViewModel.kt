@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.accident_app.Repository.Repository
-import com.example.accident_app.models.RegisterUsers
+import com.example.accident_app.Models.RegisterUsers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

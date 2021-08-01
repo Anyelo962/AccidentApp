@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.RadioButton
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,11 +11,8 @@ import com.example.accident_app.R
 import com.example.accident_app.Repository.Repository
 import com.example.accident_app.ViewModels.RegisterUserViewModel
 import com.example.accident_app.ViewModels.RegisterViewModelFactory
-import com.example.accident_app.models.RegisterUsers
+import com.example.accident_app.Models.RegisterUsers
 import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.textfield.TextInputEditText
-import java.time.LocalDate
-import java.time.LocalDateTime
 
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
