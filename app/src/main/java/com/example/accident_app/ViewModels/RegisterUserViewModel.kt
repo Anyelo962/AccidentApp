@@ -10,11 +10,11 @@ import retrofit2.Response
 
 class RegisterUserViewModel(private val repository: Repository): ViewModel() {
 
-    val Dresponse : MutableLiveData<RegisterUsers> = MutableLiveData();
+    val Dresponse : MutableLiveData<Response<RegisterUsers>> = MutableLiveData();
     val pushUsers : MutableLiveData<Response<RegisterUsers>> = MutableLiveData();
     fun getUsers(){
         viewModelScope.launch {
-            val response : RegisterUsers = repository.getUsers()
+            val response : Response<RegisterUsers> = repository.pushUser(RegisterUsers())
             Dresponse.value = response
         }
     }

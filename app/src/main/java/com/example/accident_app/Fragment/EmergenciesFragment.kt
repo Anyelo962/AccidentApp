@@ -11,46 +11,36 @@ import androidx.cardview.widget.CardView
 import com.example.accident_app.R
 import com.example.accident_app.interfaces.IEmergency
 class EmergenciesFragment : Fragment() {
-    lateinit var listener: IEmergency;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if(context is IEmergency){
-            listener = context;
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_emergencies, container, false);
         val call_emergency = view.findViewById<CardView>(R.id.id_call_emergency);
         val call_national_police = view.findViewById<CardView>(R.id.id_call_police);
         val call_defence_civil = view.findViewById<CardView>(R.id.id_call_defence);
         val call_red_cross = view.findViewById<CardView>(R.id.id_call_red);
 
-        listener.getNumber();
-
         call_emergency.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL).apply {
                 data = Uri.parse("tel:911")
             }
                 startActivity(intent)
-            //Toast.makeText(context,"Telefono"+ intent, Toast.LENGTH_LONG).show()
         }
-//
+
         call_national_police.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL).apply{
                 data = Uri.parse("tel:(809) 682-2151")
             }
             startActivity(intent)
         }
-//
+
         call_defence_civil.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL).apply{
                 data = Uri.parse("tel:(809) 472-4614")

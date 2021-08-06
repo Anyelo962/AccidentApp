@@ -1,20 +1,16 @@
 package com.example.accident_app.ui
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.accident_app.R
-import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.accident_app.Fragment.*
 import com.example.accident_app.interfaces.IComunicationFragment
-import com.example.accident_app.interfaces.IEmergency
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.datepicker.MaterialDatePicker
 
-class MainActivity : AppCompatActivity(), IComunicationFragment, IEmergency {
+class MainActivity : AppCompatActivity(), IComunicationFragment {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -62,9 +58,21 @@ class MainActivity : AppCompatActivity(), IComunicationFragment, IEmergency {
         }
     }
 
-    override fun getMap(fragment: Fragment) {
-        TODO("Not yet implemented")
+    override fun getMap(fragment: MapActivity) {
+        val intent = Intent(this, MapActivity::class.java );
+        startActivity(intent);
     }
+
+//    override fun getMap(fragment: Activity) {
+//
+//        val intent = Intent(this, MapActivity::class.java );
+//        startActivity(intent);
+//        supportFragmentManager.beginTransaction().apply {
+//            replace(R.id.id_fl_wrapper, MapFragment()).commit();
+//            addToBackStack("MainActivity");
+//            Toast.makeText(baseContext, "Paso por aqui", Toast.LENGTH_LONG).show();
+//        }
+//    }
 
     override fun numberEmergency(fragment: Fragment) {
             supportFragmentManager.beginTransaction().apply {
@@ -86,12 +94,4 @@ class MainActivity : AppCompatActivity(), IComunicationFragment, IEmergency {
         TODO("Not yet implemented")
     }
 
-    override fun getNumber() {
-        val intent = Intent(Intent.ACTION_DIAL).apply {
-            data = Uri.parse("tel:8094932952")
-        }
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
-        }
-    }
 }

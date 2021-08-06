@@ -4,16 +4,16 @@ import com.google.gson.annotations.SerializedName
 import java.util.*
 
 data class RegisterUsers(
-   val id:Int,
-   val firstName:String,
-   val lastName:String,
-   val email:String,
-   val password:String,
-   val sex: String,
-   val birthDate:Date?,
+   val id:Int = 0,
+   val firstName:String = "",
+   val lastName:String = "",
+   val email:String = "",
+   val password:String = "",
+   val sex: String = "",
+   val birthDate:Date? = null,
    @SerializedName("idCard")
-   val DNI: String,
-   val status:Boolean,
-   val creationDate: Date?,
-   val name: String,
+   val DNI: String = "",
+   val status:Boolean = true,
+   val creationDate: Date? = null,
+   val name: String = "",
 )

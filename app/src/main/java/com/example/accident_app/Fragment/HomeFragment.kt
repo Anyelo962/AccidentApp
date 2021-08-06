@@ -1,19 +1,17 @@
 package com.example.accident_app.Fragment
 
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.cardview.widget.CardView
-import androidx.fragment.app.FragmentManager
 import com.example.accident_app.R
 import com.example.accident_app.interfaces.IComunicationFragment
-import java.util.zip.Inflater
+import com.example.accident_app.ui.MapActivity
+import com.mapbox.mapboxsdk.maps.MapFragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -76,7 +74,7 @@ class HomeFragment : Fragment() {
         }
 
         id_map.setOnClickListener{
-            Toast.makeText(context, "Map", Toast.LENGTH_LONG).show();
+            listener.getMap(MapActivity());
         }
 
         id_emergency.setOnClickListener{

@@ -14,7 +14,9 @@ import com.example.accident_app.ViewModels.RegisterUserViewModel
 import com.example.accident_app.ViewModels.RegisterViewModelFactory
 import com.example.accident_app.models.RegisterUsers
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -26,16 +28,16 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-//        val firstName: TextInputEditText = findViewById(R.id.id_first_name);
-//        val lastName: TextInputEditText = findViewById(R.id.id_last_name);
-//        val email : TextInputEditText = findViewById(R.id.id_user_email);
-//        val password :TextInputEditText = findViewById(R.id.id_user_password);
-//        val password2 : TextInputEditText= findViewById(R.id.id_user_password2)
-//        val sex_man : RadioButton = findViewById(R.id.id_sex_man);
-//        val sex_woman : RadioButton= findViewById(R.id.id_sex_woman);
-//        //val birthDate: RadioButton = findViewById(R.id.id_calendar);
-//        val DNI : TextInputEditText= findViewById(R.id.id_number_dni);
-
+        val firstName: TextInputLayout = findViewById(R.id.id_first_name);
+        val lastName: TextInputLayout = findViewById(R.id.id_last_name);
+        val email : TextInputLayout = findViewById(R.id.id_user_email);
+        val password :TextInputLayout = findViewById(R.id.id_user_password);
+        val password2 : TextInputLayout= findViewById(R.id.id_user_password2)
+        val sex_man : RadioButton = findViewById(R.id.id_sex_man);
+        val sex_woman : RadioButton= findViewById(R.id.id_sex_woman);
+        val birthDate:Button = findViewById(R.id.id_calendar);
+        val DNI : TextInputLayout= findViewById(R.id.id_number_dni);
+        val button_register: FloatingActionButton = findViewById(R.id.id_register_user);
 
         val id_button_calendary:Button = findViewById(R.id.id_calendar);
         id_button_calendary.setOnClickListener(this);
@@ -44,15 +46,19 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         val viewModelFactory = RegisterViewModelFactory(repository);
         viewModel = ViewModelProvider(this, viewModelFactory).get(RegisterUserViewModel::class.java);
 
-        val addUser = RegisterUsers(0, "Maicol","Martinez","Maicol02@gmail.com", "123456",
-            "M", null,"402-3949588-4",true,null, "Usuario");
-        viewModel.userPush(addUser)
-        viewModel.Dresponse.observe(this, Observer{ response->
-                Log.d("Main", response.firstName);
-                Toast.makeText(this,"Entro aqui", Toast.LENGTH_LONG).show();
-        })
+
        // viewModel.getUsers();
 
+        button_register.setOnClickListener {
+            val addUser = RegisterUsers(0, firstName.toString(),lastName.toString(),email.toString(), password.toString(),
+                "M", null,DNI.toString(),true,null, "Usuario");
+            viewModel.userPush(addUser)
+            viewModel.Dresponse.observe(this, Observer{ response->
+
+                Toast.makeText(this,"Entro aqui", Toast.LENGTH_LONG).show();
+            })
+            Toast.makeText(this,"Usuario agregado", Toast.LENGTH_LONG).show();
+        }
 
 
 //        viewModel.Dresponse.observe(this, Observer { response ->
@@ -64,6 +70,21 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 //            Log.d("Response", response.birthDate.toString())
 //            Log.d("Response", response.DNI.toString())
 //        })
+
+        viewModel.Dresponse.observe(this, Observer { response ->
+            if(response.isSuccessful){
+                Log.d("Response", response.body().toString())
+                Log.d("Response", response.body().toString())
+                Log.d("Response", response.body().toString())
+                Log.d("Response", response.body().toString())
+                Log.d("Response", response.body().toString())
+                Log.d("Response", response.body().toString())
+                Log.d("Response", response.body().toString())
+            }
+            else{
+                Toast.makeText(this, response.code(), Toast.LENGTH_LONG).show();
+            }
+        })
 
     }
 
@@ -77,5 +98,4 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
             Toast.makeText(this, "Funciona bien", Toast.LENGTH_LONG).show();
     }
 }
-
 
