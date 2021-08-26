@@ -3,13 +3,16 @@ package com.example.accident_app.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import com.example.accident_app.R
 import androidx.fragment.app.Fragment
 import com.example.accident_app.Fragment.*
 import com.example.accident_app.interfaces.IComunicationFragment
+import com.example.accident_app.interfaces.ISetting
+import com.example.accident_app.util.CallInterfaceForFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : AppCompatActivity(), IComunicationFragment {
+class MainActivity : AppCompatActivity(), IComunicationFragment, ISetting {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,7 +94,18 @@ class MainActivity : AppCompatActivity(), IComunicationFragment {
     }
 
     override fun configurationUser(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.id_fl_wrapper, SettingFragment()).commit();
+            addToBackStack("MainActivity")
+        }
+    }
+
+    override fun backToHome() {
         TODO("Not yet implemented")
+    }
+
+    override fun settingConfiguration(fragment: Fragment) {
+
     }
 
 }

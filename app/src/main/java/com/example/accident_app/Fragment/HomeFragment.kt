@@ -89,9 +89,7 @@ class HomeFragment : Fragment() {
             Toast.makeText(context, "Help user", Toast.LENGTH_LONG).show();
         }
         id_config.setOnClickListener {
-            Toast.makeText(context, "Configuration", Toast.LENGTH_LONG).show();
+            listener.configurationUser(SettingFragment());
         }
     }
-
-
 }

@@ -8,9 +8,4 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="setting">Configuración</string>
-    <string name="general_configuration">General</string>
-    <string name="general_configuration_map">Mapa</string>
-    <string name="general_configuration_profile">Perfil</string>
-    <string name="general_configuration_privacy">Privacidad</string>
-    <string name="general_configuration_notification">Notificaciones</string>
 </resources>
